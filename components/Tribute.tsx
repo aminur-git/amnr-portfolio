@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 type Quote = {
@@ -158,10 +158,61 @@ function QuoteCard({ q, index }: { q: Quote; index: number }) {
 
 export default function Tribute() {
   const ref = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
+  
+  // Animation frames setup
+  const frameCount = 236;
+  const currentFrame = useTransform(scrollYProgress, [0, 1], [1, frameCount]);
+  
+  // Preload and draw images
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const context = canvas.getContext("2d");
+    if (!context) return;
+
+    const images: HTMLImageElement[] = [];
+    let loaded = 0;
+
+    for (let i = 1; i <= frameCount; i++) {
+      const img = new Image();
+      // Pad to 3 digits (e.g. 001)
+      const paddedIndex = i.toString().padStart(3, "0");
+      img.src = `/sequence/ezgif-frame-${paddedIndex}.jpg`;
+      images.push(img);
+      img.onload = () => {
+        loaded++;
+        if (loaded === 1) {
+          // Set canvas size dynamically based on the first loaded frame
+          canvas.width = images[0].naturalWidth;
+          canvas.height = images[0].naturalHeight;
+          // Draw the first frame once it's loaded as fallback
+          context.drawImage(images[0], 0, 0, canvas.width, canvas.height);
+        }
+      };
+    }
+
+    const render = (progress: number) => {
+      if (images.length === 0) return;
+      const frameIndex = Math.min(Math.max(1, Math.round(progress)), frameCount) - 1;
+      if (images[frameIndex] && images[frameIndex].complete) {
+        context.drawImage(images[frameIndex], 0, 0, canvas.width, canvas.height);
+      }
+    };
+
+    // Subscripe to motion value changes
+    const unsubscribe = currentFrame.on("change", (latest) => {
+      // Use requestAnimationFrame for smoother performance
+      requestAnimationFrame(() => render(latest));
+    });
+
+    return () => unsubscribe();
+  }, [currentFrame, frameCount]);
+
   const s = useSpring(scrollYProgress, {
     stiffness: 80,
     damping: 22,
@@ -258,11 +309,9 @@ export default function Tribute() {
               style={{ y: imgY }}
             >
               <div className="absolute -inset-2 md:-inset-3 bg-bone/95 shadow-[0_16px_48px_rgba(0,0,0,0.5)]" />
-              <img
-                src="/hadi.jpg"
-                alt="Illustration of Shaheed Sharif Osman Bin Hadi"
+              <canvas
+                ref={canvasRef}
                 className="relative w-full h-auto block"
-                draggable={false}
               />
               <figcaption className="relative mt-3 flex items-center justify-between label text-ink/70 bg-bone/90 px-3 py-1.5">
                 <span>ঢাকা · Dhaka</span>
