@@ -402,7 +402,7 @@ export default function Tribute() {
           </p>
 
           <a
-            href="mailto:amnr@aqren.dev?subject=For%20Hadi"
+            href="mailto:aminur@aqren.dev?subject=For%20Hadi"
             className="inline-flex mt-4 items-center gap-2 px-5 py-3 bg-ember text-bone label hover:bg-bone hover:text-ink transition"
           >
             Write to me, for Hadi →

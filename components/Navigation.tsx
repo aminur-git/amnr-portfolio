@@ -212,7 +212,7 @@ export default function Navigation({
                   <span className="label text-ink/70">Open to wander</span>
                 </div>
                 <a
-                  href="mailto:hello@aminur.dev"
+                  href="mailto:aminur@aqren.dev"
                   className="label underline-hand hover:text-ember transition"
                 >
                   Write to me →

@@ -17,10 +17,10 @@ export default function Footer() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="mailto:hello@aminur.dev"
+                href="mailto:aminur@aqren.dev"
                 className="px-5 py-3 bg-ember text-bone label hover:bg-bone hover:text-ink transition"
               >
-                amnr@aqren.dev →
+                aminur@aqren.dev →
               </a>
               <a
                 href="https://github.com/aminur-git"
