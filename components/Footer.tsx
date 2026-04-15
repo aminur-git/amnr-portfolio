@@ -31,6 +31,17 @@ export default function Footer() {
                 GitHub ↗
               </a>
               <a
+                href="https://www.upwork.com/freelancers/~01e10ec4df578dbc27"
+                target="_blank"
+                rel="noreferrer"
+                className="group relative px-5 py-3 border border-bone/30 label hover:bg-bone hover:text-ink transition inline-flex items-center gap-2"
+              >
+                <span>Upwork ↗</span>
+                <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-ember text-bone text-[9px] leading-none tracking-[0.14em]">
+                  ★ Top Rated
+                </span>
+              </a>
+              <a
                 href="#"
                 className="px-5 py-3 border border-bone/30 label hover:bg-bone hover:text-ink transition"
               >
@@ -62,6 +73,42 @@ export default function Footer() {
                 Learning to make proper biryani from my mother, finally.
               </li>
             </ul>
+
+            <div className="mt-8">
+              <div className="label text-bone/50 mb-3">On Upwork</div>
+              <a
+                href="https://www.upwork.com/freelancers/~01e10ec4df578dbc27"
+                target="_blank"
+                rel="noreferrer"
+                className="block border border-bone/20 p-4 hover:border-ember transition group"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-10 h-10 border border-ember rounded-full text-ember text-[18px] leading-none">
+                    ♛
+                  </div>
+                  <div>
+                    <div className="frx text-[22px] leading-none">100%</div>
+                    <div className="label text-bone/60 mt-1">Job success</div>
+                  </div>
+                </div>
+                <div className="mt-4 pt-3 border-t border-bone/15 flex items-center gap-3">
+                  <div className="flex items-center justify-center w-10 h-10 bg-ember text-bone text-[16px]">
+                    ★
+                  </div>
+                  <div>
+                    <div className="frx-italic text-[18px] leading-none">
+                      Top Rated
+                    </div>
+                    <div className="label text-bone/60 mt-1">
+                      verified freelancer
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-3 label text-bone/45 group-hover:text-ember transition">
+                  View profile ↗
+                </div>
+              </a>
+            </div>
 
             <div className="mt-8">
               <div className="label text-bone/50 mb-2">Last updated</div>
