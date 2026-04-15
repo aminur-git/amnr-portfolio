@@ -4,9 +4,9 @@ import ContactSheet from "./ContactSheet";
 
 const entries = [
   {
-    year: "2011",
-    title: "A borrowed laptop, a dial-up line",
-    body: "First line of code was a <marquee> tag. My cousin&rsquo;s machine, my mother&rsquo;s patience. I thought I&rsquo;d invented movement.",
+    year: "2014",
+    title: "Dad bought us a computer",
+    body: "started playing gta vice city, need for speed most wanted etc",
     tag: "origin",
   },
   {
@@ -40,7 +40,9 @@ export default function Journey() {
     <section className="relative max-w-[1400px] mx-auto px-6 md:px-10 py-24 md:py-36">
       <div className="grid grid-cols-12 gap-6 items-end mb-14">
         <div className="col-span-12 md:col-span-7">
-          <span className="label text-ember">Chapter 01 — The long way around</span>
+          <span className="label text-ember">
+            Chapter 01 — The long way around
+          </span>
           <h2 className="frx text-[13vw] md:text-[7.5vw] leading-[0.9] mt-4">
             A <span className="frx-italic">winding</span> road,
             <br />
@@ -50,8 +52,9 @@ export default function Journey() {
         <div className="col-span-12 md:col-span-4 md:col-start-9">
           <div className="rule mb-4" />
           <p className="font-editorial text-[19px] leading-[1.45] text-ink/80">
-            The résumé version is boring. Here&rsquo;s the version with the margins still in it —
-            the detours, the re-reads, the places I got lost on purpose.
+            The résumé version is boring. Here&rsquo;s the version with the
+            margins still in it — the detours, the re-reads, the places I got
+            lost on purpose.
           </p>
         </div>
       </div>
@@ -71,7 +74,9 @@ export default function Journey() {
 
             <div className="grid grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="col-span-12 md:col-span-2">
-                <span className="frx text-[44px] md:text-[54px] leading-none">{e.year}</span>
+                <span className="frx text-[44px] md:text-[54px] leading-none">
+                  {e.year}
+                </span>
                 <div className="label text-ink/50 mt-2">— {e.tag}</div>
               </div>
               <div className="col-span-12 md:col-span-10">
@@ -91,7 +96,9 @@ export default function Journey() {
       <div className="mt-10 flex items-center gap-3 text-ink/60">
         <span className="label">End of chapter</span>
         <span className="flex-1 rule" />
-        <span className="label italic frx-italic text-[16px]">to be continued</span>
+        <span className="label italic frx-italic text-[16px]">
+          to be continued
+        </span>
       </div>
     </section>
   );

@@ -44,32 +44,32 @@ export default function Hero({
             className="frx rise text-[14vw] sm:text-[12vw] md:text-[9.5vw] lg:text-[8.8vw] leading-[0.88] tracking-tightest"
             style={{ animationDelay: "180ms" }}
           >
-            Building <span className="frx-italic text-ember">quiet</span>
+            Enterprise
             <br />
-            software{" "}
+            software,{" "}
             <span className="relative inline-block">
-              <span className="underline-hand">with loud</span>
+              <span className="underline-hand">built from</span>
             </span>
             <br />
-            <span className="frx-italic">intentions.</span>
+            <span className="frx-italic text-ember">business</span>{" "}
+            <span className="frx-italic"> sense.</span>
           </h1>
 
           {/* bio paragraph — only on md+ under the headline for desktop breathing room */}
           <p
-            className="hidden md:block mt-8 font-editorial text-[22px] lg:text-[26px] leading-[1.3] text-ink/85 max-w-[28ch] rise"
+            className="hidden md:block mt-8 font-editorial text-[22px] lg:text-[26px] leading-[1.3] text-ink/85 max-w-[29ch] rise"
             style={{ animationDelay: "360ms" }}
           >
-            I&rsquo;m Aminur — a builder, tinkerer, and a reluctant philosopher
-            who writes code like it&rsquo;s a letter. Sometimes I ship things.
-            Sometimes I just brew chai and think.
+            I'm Aminur — full-stack developer and CTO. I build enterprise SaaS
+            systems. I think from the business perspective first. I lead teams,
+            communicate a lot, and ship products that actually work for real
+            people.
           </p>
         </div>
 
         {/* RIGHT — portrait + CTA column */}
         <div className="col-span-12 md:col-span-4 order-1 md:order-2 flex flex-col items-stretch">
           <PolaroidStack />
-
-
 
           {/* mobile-only bio under portrait */}
           <p className="md:hidden mt-8 font-editorial text-[20px] sm:text-[22px] leading-[1.3] text-ink/85">
@@ -81,8 +81,8 @@ export default function Hero({
           <div className="mt-8 md:mt-10">
             <div className="rule mb-4" />
             <p className="text-[14px] sm:text-[15px] leading-[1.65] text-ink/75">
-              This is a slow page. A non-linear one. Wander between four rooms
-              — pick up what you want, leave the rest. There&rsquo;s no correct
+              This is a slow page. A non-linear one. Wander between four rooms —
+              pick up what you want, leave the rest. There&rsquo;s no correct
               door.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
