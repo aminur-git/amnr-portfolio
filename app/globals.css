@@ -43,8 +43,8 @@ body::before {
     "opsz" 144,
     "SOFT" 30,
     "wght" 340;
-  letter-spacing: -0.03em;
-  line-height: 1.3;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
 }
 
 .frx-italic {

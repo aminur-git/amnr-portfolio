@@ -97,11 +97,10 @@ function QuoteCard({ q, index }: { q: Quote; index: number }) {
       </span>
 
       <blockquote
-        className={`frx text-[21px] md:text-[24px] leading-[1.45] ${
+        className={` text-[21px] md:text-[24px] leading-[1.15] ${
           q.featured ? "text-ink" : "text-bone"
         }`}
         lang="bn"
-        style={{ fontVariationSettings: '"opsz" 144, "SOFT" 20, "wght" 420' }}
       >
         {q.bn}
       </blockquote>
