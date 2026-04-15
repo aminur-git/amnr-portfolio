@@ -12,17 +12,17 @@ type Shot = {
 const SHOTS: Shot[] = [
   {
     src: "/portrait.jpg",
-    num: "N° 001",
+    num: "N° 000",
     caption: "somewhere, last spring",
   },
   {
     src: "/portrait-1.jpg",
-    num: "N° 002",
+    num: "N° 001",
     caption: "a kitchen, late",
   },
   {
-    src: "/portrait-3.jpg",
-    num: "N° 003",
+    src: "/portrait-2.jpg",
+    num: "N° 002",
     caption: "field notes, in progress",
   },
 ];

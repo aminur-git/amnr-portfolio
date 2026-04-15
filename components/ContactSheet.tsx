@@ -6,7 +6,7 @@ const PLATES: Plate[] = [
   { src: "/portrait.jpg", caption: "available light" },
   { src: "/portrait-1.jpg", caption: "in transit" },
   { src: "/portrait-5.jpg", caption: "at the desk" },
-  { src: "/portrait-6.jpg", caption: "the long read" },
+  { src: "/portrait-6.jpg", caption: "the keeper" },
   { src: "/portrait-7.jpg", caption: "chai hour" },
 ];
 

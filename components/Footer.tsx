@@ -20,7 +20,7 @@ export default function Footer() {
                 href="mailto:hello@aminur.dev"
                 className="px-5 py-3 bg-ember text-bone label hover:bg-bone hover:text-ink transition"
               >
-                hello@aminur.dev →
+                amnr@aqren.dev →
               </a>
               <a
                 href="https://github.com/aminur-git"
@@ -50,7 +50,8 @@ export default function Footer() {
             <ul className="space-y-3 text-[16px] leading-[1.55] text-bone/85">
               <li>
                 <span className="label text-ember mr-2">01</span>
-                Reading <em className="frx-italic">The Unreality of Time</em> — McTaggart.
+                Reading <em className="frx-italic">The Unreality of Time</em> —
+                McTaggart.
               </li>
               <li>
                 <span className="label text-ember mr-2">02</span>
