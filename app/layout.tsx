@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aminur.dev"),
+  metadataBase: new URL("https://www.amnr.bro.bd/"),
   title: {
     default: "Aminur Rahman — Enterprise software, built from business sense",
     template: "%s · Aminur Rahman",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://aminur.dev",
+    url: "https://www.amnr.bro.bd/",
     siteName: "Aminur Rahman",
     title: "Aminur Rahman — Enterprise software, built from business sense",
     description:
