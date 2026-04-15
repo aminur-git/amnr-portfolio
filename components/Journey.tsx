@@ -1,5 +1,7 @@
 "use client";
 
+import ContactSheet from "./ContactSheet";
+
 const entries = [
   {
     year: "2011",
@@ -53,6 +55,8 @@ export default function Journey() {
           </p>
         </div>
       </div>
+
+      <ContactSheet />
 
       <ol className="relative border-l border-ink/25 ml-2 md:ml-6">
         {entries.map((e, i) => (

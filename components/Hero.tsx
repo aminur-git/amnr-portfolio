@@ -1,6 +1,7 @@
 "use client";
 
 import type { Section } from "@/app/page";
+import PolaroidStack from "./PolaroidStack";
 
 export default function Hero({
   setSection,
@@ -66,37 +67,9 @@ export default function Hero({
 
         {/* RIGHT — portrait + CTA column */}
         <div className="col-span-12 md:col-span-4 order-1 md:order-2 flex flex-col items-stretch">
-          <figure className="mx-auto md:mx-0 w-[220px] sm:w-[240px] md:w-full md:max-w-[260px] rotate-[2.2deg] hover:rotate-0 transition-transform duration-500">
-            <div className="bg-bone border border-ink/20 p-3 pb-5 shadow-[8px_10px_0_rgba(21,18,14,0.12)]">
-              <div className="relative aspect-[4/5] overflow-hidden bg-parchment">
-                <img
-                  src="/portrait.jpg"
-                  alt="Aminur, in available light"
-                  className="absolute inset-0 w-full h-full object-cover grayscale-[0.15] contrast-[1.02]"
-                  onError={(e) => {
-                    const t = e.currentTarget;
-                    t.style.display = "none";
-                    (t.nextElementSibling as HTMLElement).style.display = "flex";
-                  }}
-                />
-                <div
-                  className="absolute inset-0 hidden items-center justify-center label text-ink/40 bg-parchment"
-                  style={{ display: "none" }}
-                >
-                  drop portrait.jpg
-                </div>
-                <span className="absolute top-2 left-2 label text-ink/60 bg-bone/80 px-1.5 py-0.5">
-                  N° 001
-                </span>
-              </div>
-              <figcaption className="mt-3 flex items-center justify-between px-1">
-                <span className="font-editorial italic text-[14px] sm:text-[15px] text-ink/70">
-                  somewhere, last spring
-                </span>
-                <span className="label text-ember">· A.R.</span>
-              </figcaption>
-            </div>
-          </figure>
+          <PolaroidStack />
+
+
 
           {/* mobile-only bio under portrait */}
           <p className="md:hidden mt-8 font-editorial text-[20px] sm:text-[22px] leading-[1.3] text-ink/85">
