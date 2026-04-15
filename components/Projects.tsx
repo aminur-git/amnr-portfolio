@@ -113,7 +113,7 @@ export default function Projects() {
 
   return (
     <section className="relative bg-parchment/50 border-y border-ink/15">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-24 md:py-36">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-20 sm:py-24 md:py-36">
         <div className="grid grid-cols-12 gap-6 mb-12 items-end">
           <div className="col-span-12 md:col-span-8">
             <span className="label text-ember">Chapter 02 — The Work</span>

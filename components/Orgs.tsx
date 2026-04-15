@@ -77,7 +77,7 @@ export default function Orgs() {
 
   return (
     <section className="relative bg-ink text-bone border-y border-ink">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-20 md:py-28">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-16 sm:py-20 md:py-28">
         <div className="grid grid-cols-12 gap-6 items-end mb-10">
           <div className="col-span-12 md:col-span-8">
             <span className="label text-ember">Appendix — In good company</span>
@@ -101,7 +101,7 @@ export default function Orgs() {
               href={o.url}
               target="_blank"
               rel="noreferrer"
-              className="group bg-ink p-6 md:p-8 flex flex-col gap-5 hover:bg-[#1f1b15] transition-colors relative"
+              className="group bg-ink p-5 sm:p-6 md:p-8 flex flex-col gap-4 sm:gap-5 hover:bg-[#1f1b15] transition-colors relative"
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="relative">
@@ -122,7 +122,7 @@ export default function Orgs() {
 
               <div>
                 <div className="label text-ember mb-1">{o.role}</div>
-                <div className="frx text-[38px] md:text-[42px] leading-[0.95] tracking-tightest">
+                <div className="frx text-[32px] sm:text-[38px] md:text-[42px] leading-[0.95] tracking-tightest">
                   {o.name}
                 </div>
                 <div className="font-editorial italic text-[15px] text-bone/55 mt-1">

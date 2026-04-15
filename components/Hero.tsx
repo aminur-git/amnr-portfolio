@@ -14,7 +14,7 @@ export default function Hero({
   };
 
   return (
-    <section className="relative max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 pt-10 sm:pt-14 md:pt-20 pb-20 md:pb-32 overflow-hidden">
+    <section className="relative max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 pt-24 sm:pt-28 md:pt-32 pb-20 md:pb-32 overflow-hidden">
       {/* decorative corner ornament */}
       <svg
         className="absolute top-6 right-4 sm:top-10 sm:right-6 md:right-10 drift pointer-events-none"
@@ -29,7 +29,7 @@ export default function Hero({
 
       {/* file label */}
       <div
-        className="flex flex-wrap items-center gap-2 sm:gap-3 mb-6 rise"
+        className="flex flex-wrap items-center gap-2 sm:gap-3 mb-8 sm:mb-10 rise"
         style={{ animationDelay: "100ms" }}
       >
         <span className="label text-ember">File 00 —</span>

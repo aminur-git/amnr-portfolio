@@ -2,16 +2,16 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="relative bg-ink text-bone">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-20 md:py-28">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-16 sm:py-20 md:py-28">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-8">
             <span className="label text-ember">Colophon — Say hello</span>
-            <h3 className="frx text-[13vw] md:text-[7vw] leading-[0.9] mt-4">
+            <h3 className="frx text-[14vw] sm:text-[11vw] md:text-[7vw] leading-[0.9] mt-4">
               Write to me,
               <br />
               <span className="frx-italic text-ember">slowly.</span>
             </h3>
-            <p className="font-editorial text-[22px] italic text-bone/75 mt-6 max-w-[40ch]">
+            <p className="font-editorial text-[18px] sm:text-[22px] italic text-bone/75 mt-6 max-w-[40ch]">
               I read every email. I answer most of them. Long letters preferred.
             </p>
 
@@ -85,7 +85,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 label text-bone/55">
+        <div className="mt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-4 label text-bone/55 text-[10px] sm:text-[11px]">
           <span>© {year} Aminur Rahman — all footnotes reserved</span>
           <span>Set in Fraunces, Instrument Serif & JetBrains Mono</span>
           <span>Made slowly, on purpose</span>

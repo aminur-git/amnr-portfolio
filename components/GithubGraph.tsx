@@ -63,7 +63,7 @@ export default function GithubGraph() {
   const H = 7 * (CELL + GAP);
 
   return (
-    <section className="relative max-w-[1400px] mx-auto px-6 md:px-10 py-20 md:py-28">
+    <section className="relative max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-16 sm:py-20 md:py-28">
       <div className="grid grid-cols-12 gap-6 items-end mb-10">
         <div className="col-span-12 md:col-span-8">
           <span className="label text-ember">Interlude — Receipts</span>
@@ -80,7 +80,7 @@ export default function GithubGraph() {
         </div>
       </div>
 
-      <figure className="relative border border-ink/20 bg-bone p-5 md:p-8 shadow-[6px_8px_0_rgba(21,18,14,0.08)]">
+      <figure className="relative border border-ink/20 bg-bone p-4 sm:p-5 md:p-8 shadow-[6px_8px_0_rgba(21,18,14,0.08)]">
         <div className="flex items-center justify-between mb-5">
           <div className="flex items-center gap-3">
             <span className="w-2.5 h-2.5 rounded-full bg-ember blink" />

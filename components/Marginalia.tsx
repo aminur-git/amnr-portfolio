@@ -42,8 +42,8 @@ export default function Marginalia({
         isDark ? "bg-ink border-bone/10" : "bg-parchment/40 border-ink/10"
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-5 md:py-6 flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3 shrink-0">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-5 md:py-6 flex items-center justify-between gap-3 sm:gap-4">
+        <div className="hidden sm:flex items-center gap-3 shrink-0">
           <span
             className={`w-6 h-px ${isDark ? "bg-bone/30" : "bg-ink/25"}`}
           />
@@ -77,7 +77,7 @@ export default function Marginalia({
           </span>
         </motion.div>
 
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="hidden sm:flex items-center gap-3 shrink-0">
           <span
             className={`label ${isDark ? "text-bone/50" : "text-ink/50"}`}
           >

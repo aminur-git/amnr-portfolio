@@ -37,7 +37,7 @@ const entries = [
 
 export default function Journey() {
   return (
-    <section className="relative max-w-[1400px] mx-auto px-6 md:px-10 py-24 md:py-36">
+    <section className="relative max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-20 sm:py-24 md:py-36">
       <div className="grid grid-cols-12 gap-6 items-end mb-14">
         <div className="col-span-12 md:col-span-7">
           <span className="label text-ember">
@@ -65,7 +65,7 @@ export default function Journey() {
         {entries.map((e, i) => (
           <li
             key={e.year}
-            className="relative pl-8 md:pl-14 pb-14 group"
+            className="relative pl-6 sm:pl-8 md:pl-14 pb-10 sm:pb-14 group"
             style={{ animationDelay: `${i * 80}ms` }}
           >
             <span className="absolute -left-[9px] top-1 w-[16px] h-[16px] rounded-full bg-bone border border-ink flex items-center justify-center">
@@ -74,13 +74,13 @@ export default function Journey() {
 
             <div className="grid grid-cols-12 gap-4 md:gap-8 items-start">
               <div className="col-span-12 md:col-span-2">
-                <span className="frx text-[44px] md:text-[54px] leading-none">
+                <span className="frx text-[36px] sm:text-[44px] md:text-[54px] leading-none">
                   {e.year}
                 </span>
                 <div className="label text-ink/50 mt-2">— {e.tag}</div>
               </div>
               <div className="col-span-12 md:col-span-10">
-                <h3 className="font-editorial text-[28px] md:text-[34px] leading-[1.1] text-ink">
+                <h3 className="font-editorial text-[24px] sm:text-[28px] md:text-[34px] leading-[1.15] text-ink">
                   {e.title}
                 </h3>
                 <p

@@ -81,7 +81,7 @@ function QuoteCard({ q, index }: { q: Quote; index: number }) {
         delay: index * 0.08,
         ease: [0.2, 0.8, 0.2, 1],
       }}
-      className={`relative group break-inside-avoid mb-5 p-6 md:p-7 border transition-colors ${
+      className={`relative group break-inside-avoid mb-4 sm:mb-5 p-5 sm:p-6 md:p-7 border transition-colors ${
         q.featured
           ? "bg-[#fbf3e3] border-ink/15 text-ink"
           : "bg-bone/[0.04] border-bone/20 text-bone hover:bg-bone/[0.07]"
@@ -98,7 +98,7 @@ function QuoteCard({ q, index }: { q: Quote; index: number }) {
       </span>
 
       <blockquote
-        className={` text-[21px] md:text-[24px] leading-[1.15] ${
+        className={` text-[18px] sm:text-[21px] md:text-[24px] leading-[1.2] ${
           q.featured ? "text-ink" : "text-bone"
         }`}
         lang="bn"
@@ -260,7 +260,7 @@ export default function Tribute() {
 
       <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-20 md:py-28">
         {/* HEADER ROW */}
-        <div className="grid grid-cols-12 gap-6 md:gap-10 items-center">
+        <div className="grid grid-cols-12 gap-10 md:gap-10 items-center">
           <div className="col-span-12 md:col-span-7 order-2 md:order-1">
             <div className="flex items-center gap-3 mb-5">
               <span className="w-8 h-px bg-bone/60" />
@@ -333,12 +333,12 @@ export default function Tribute() {
           <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
             <div>
               <span className="label text-ember">His words</span>
-              <h3 className="frx text-[9vw] md:text-[4.2vw] leading-[0.95] mt-2 tracking-tightest">
+              <h3 className="frx text-[11vw] sm:text-[9vw] md:text-[4.2vw] leading-[0.95] mt-2 tracking-tightest">
                 Kept here, so they{" "}
                 <span className="frx-italic">keep going.</span>
               </h3>
             </div>
-            <span className="label text-bone/45 max-w-[34ch] text-right">
+            <span className="label text-bone/45 max-w-[34ch] text-left sm:text-right">
               tap any card to copy · বাংলা original, with a gentle English
               reading below
             </span>

@@ -12,7 +12,7 @@ const steps = [
 
 export default function Recipe() {
   return (
-    <section className="relative max-w-[1400px] mx-auto px-6 md:px-10 py-24 md:py-36">
+    <section className="relative max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 py-20 sm:py-24 md:py-36">
       <div className="grid grid-cols-12 gap-6 mb-12 items-end">
         <div className="col-span-12 md:col-span-8">
           <span className="label text-ember">Chapter 03 — Play / Appendix</span>
@@ -33,12 +33,12 @@ export default function Recipe() {
       <div className="grid grid-cols-12 gap-6">
         {/* left: the card */}
         <div className="col-span-12 md:col-span-5 relative">
-          <div className="relative bg-bone border border-ink/25 p-7 md:p-10 rotate-[-0.6deg] shadow-[6px_8px_0_rgba(21,18,14,0.12)]">
+          <div className="relative bg-bone border border-ink/25 p-5 sm:p-7 md:p-10 rotate-[-0.6deg] shadow-[6px_8px_0_rgba(21,18,14,0.12)]">
             <div className="flex items-start justify-between mb-6">
               <div>
                 <div className="label text-ember">Recipe card</div>
-                <div className="frx text-[42px] leading-none mt-1">Doodh Cha</div>
-                <div className="font-editorial italic text-ink/65 text-[18px] mt-1">
+                <div className="frx text-[32px] sm:text-[42px] leading-none mt-1">Doodh Cha</div>
+                <div className="font-editorial italic text-ink/65 text-[16px] sm:text-[18px] mt-1">
                   Dhaka winter, serves one
                 </div>
               </div>
@@ -94,22 +94,22 @@ export default function Recipe() {
         <div className="col-span-12 md:col-span-7">
           <ol className="relative">
             {steps.map((s, i) => (
-              <li key={i} className="grid grid-cols-12 gap-4 py-5 border-b border-ink/15">
-                <div className="col-span-3 md:col-span-2">
-                  <div className="frx text-[26px] md:text-[30px] leading-none">{s.t}</div>
-                  <div className="label text-ink/50 mt-2">Step {String(i + 1).padStart(2, "0")}</div>
+              <li key={i} className="grid grid-cols-12 gap-3 sm:gap-4 py-4 sm:py-5 border-b border-ink/15">
+                <div className="col-span-4 sm:col-span-3 md:col-span-2">
+                  <div className="frx text-[22px] sm:text-[26px] md:text-[30px] leading-none">{s.t}</div>
+                  <div className="label text-ink/50 mt-2 text-[10px]">Step {String(i + 1).padStart(2, "0")}</div>
                 </div>
-                <div className="col-span-9 md:col-span-10">
-                  <div className="font-editorial text-[24px] leading-tight">{s.h}</div>
-                  <p className="text-[16px] leading-[1.65] text-ink/75 mt-1 max-w-[56ch]">{s.b}</p>
+                <div className="col-span-8 sm:col-span-9 md:col-span-10">
+                  <div className="font-editorial text-[20px] sm:text-[24px] leading-tight">{s.h}</div>
+                  <p className="text-[15px] sm:text-[16px] leading-[1.65] text-ink/75 mt-1 max-w-[56ch]">{s.b}</p>
                 </div>
               </li>
             ))}
           </ol>
 
-          <div className="mt-8 p-6 border border-dashed border-ink/30 bg-whisper/50">
+          <div className="mt-8 p-5 sm:p-6 border border-dashed border-ink/30 bg-whisper/50">
             <div className="label text-ember mb-2">Margin note</div>
-            <p className="font-editorial text-[20px] italic leading-[1.5] text-ink/85">
+            <p className="font-editorial text-[18px] sm:text-[20px] italic leading-[1.5] text-ink/85">
               &ldquo;The best chai is the one you made for someone else, and then sat down beside
               them to drink.&rdquo;
             </p>

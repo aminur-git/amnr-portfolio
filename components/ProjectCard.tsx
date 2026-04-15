@@ -29,19 +29,19 @@ export default function ProjectCard({
     <div className="border-b border-ink/20 group">
       <button
         onClick={onToggle}
-        className="w-full text-left py-6 md:py-7 grid grid-cols-12 gap-4 items-center transition-colors hover:bg-bone/70"
+        className="w-full text-left py-5 sm:py-6 md:py-7 grid grid-cols-12 gap-x-3 gap-y-2 sm:gap-4 items-center transition-colors hover:bg-bone/70"
       >
         <div className="col-span-2 md:col-span-1 label text-ink/50">{project.num}</div>
 
         <div className="col-span-10 md:col-span-5 flex flex-col md:flex-row md:items-baseline md:gap-4">
           <span
-            className="frx text-[38px] md:text-[54px] leading-[0.95] tracking-tightest"
+            className="frx text-[32px] sm:text-[38px] md:text-[54px] leading-[0.95] tracking-tightest"
             style={{ color: open ? project.hue : undefined }}
           >
             {project.title}
           </span>
           <span
-            className="font-editorial italic text-[18px] md:text-[20px] text-ink/65"
+            className="font-editorial italic text-[16px] md:text-[20px] text-ink/65 leading-snug"
             dangerouslySetInnerHTML={{ __html: project.kicker }}
           />
         </div>
@@ -85,20 +85,20 @@ export default function ProjectCard({
           >
             <div className="grid grid-cols-12 gap-6 pb-10 pt-2">
               <div
-                className="col-span-12 md:col-span-5 relative h-[260px] md:h-full min-h-[280px] rounded-sm overflow-hidden border border-ink/15"
+                className="col-span-12 md:col-span-5 relative h-[220px] sm:h-[260px] md:h-full min-h-[280px] rounded-sm overflow-hidden border border-ink/15"
                 style={{
                   background: `radial-gradient(120% 80% at 20% 10%, ${project.hue}33, transparent 60%), linear-gradient(135deg, ${project.hue}14, ${project.hue}02)`,
                 }}
               >
                 <div className="absolute inset-0 dot-grid opacity-40" />
-                <div className="absolute inset-0 p-6 flex flex-col justify-between">
+                <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
                     <span className="label text-ink/70">Case N° {project.num}</span>
                     <span className="label text-ink/70">{project.year}</span>
                   </div>
                   <div>
                     <div
-                      className="frx text-[54px] md:text-[76px] leading-[0.9]"
+                      className="frx text-[42px] sm:text-[54px] md:text-[76px] leading-[0.9] break-words"
                       style={{ color: project.hue }}
                     >
                       {project.title}
@@ -125,7 +125,7 @@ export default function ProjectCard({
               </div>
 
               <div className="col-span-12 md:col-span-7 md:pl-4">
-                <p className="font-editorial text-[22px] md:text-[24px] leading-[1.4] text-ink/90">
+                <p className="font-editorial text-[19px] sm:text-[22px] md:text-[24px] leading-[1.4] text-ink/90">
                   {project.blurb}
                 </p>
                 <div className="rule my-5" />
