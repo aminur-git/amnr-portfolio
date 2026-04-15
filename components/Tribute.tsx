@@ -163,11 +163,11 @@ export default function Tribute() {
     target: ref,
     offset: ["start end", "end start"],
   });
-  
+
   // Animation frames setup
   const frameCount = 236;
   const currentFrame = useTransform(scrollYProgress, [0, 1], [1, frameCount]);
-  
+
   // Preload and draw images
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -198,9 +198,16 @@ export default function Tribute() {
 
     const render = (progress: number) => {
       if (images.length === 0) return;
-      const frameIndex = Math.min(Math.max(1, Math.round(progress)), frameCount) - 1;
+      const frameIndex =
+        Math.min(Math.max(1, Math.round(progress)), frameCount) - 1;
       if (images[frameIndex] && images[frameIndex].complete) {
-        context.drawImage(images[frameIndex], 0, 0, canvas.width, canvas.height);
+        context.drawImage(
+          images[frameIndex],
+          0,
+          0,
+          canvas.width,
+          canvas.height,
+        );
       }
     };
 
