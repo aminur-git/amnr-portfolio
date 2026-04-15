@@ -72,6 +72,19 @@ export default function Footer() {
 
         <div className="rule mt-16 opacity-40" />
 
+        {/* permanent dedication — quietly, every visit */}
+        <div className="mt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b border-bone/10 pb-6">
+          <div className="flex items-center gap-3">
+            <span className="text-ember text-[18px]">✦</span>
+            <span className="font-editorial italic text-[18px] text-bone/85">
+              Every page here is, quietly, for Hadi.
+            </span>
+          </div>
+          <div className="label text-bone/55">
+            শহীদ ওসমান হাদি · 1993 — 2025
+          </div>
+        </div>
+
         <div className="mt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 label text-bone/55">
           <span>© {year} Aminur Rahman — all footnotes reserved</span>
           <span>Set in Fraunces, Instrument Serif & JetBrains Mono</span>

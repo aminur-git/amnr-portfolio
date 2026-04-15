@@ -34,6 +34,12 @@ export default function Hero({
       >
         <span className="label text-ember">File 00 —</span>
         <span className="label text-ink/60">A self-portrait, softly</span>
+        <span className="hidden sm:inline label text-ink/30">·</span>
+        <span className="label text-ink/50">
+          held, always, for Hadi{" "}
+          <span className="text-ember">✦</span>{" "}
+          <span className="text-ink/35">1993 — 2025</span>
+        </span>
       </div>
 
       {/* portrait + blurb: stacked on mobile, side column on md+ */}
