@@ -86,6 +86,7 @@ function QuoteCard({ q, index }: { q: Quote; index: number }) {
           ? "bg-[#fbf3e3] border-ink/15 text-ink"
           : "bg-bone/[0.04] border-bone/20 text-bone hover:bg-bone/[0.07]"
       }`}
+      whileHover={{ y: -4, scale: 1.01 }}
     >
       <span
         className={`frx text-[56px] leading-[0.6] block mb-3 ${
@@ -357,14 +358,24 @@ export default function Tribute() {
             <span className="flex-1 h-px bg-bone/15" />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-bone/10 border border-bone/10">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ staggerChildren: 0.15 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-bone/10 border border-bone/10"
+          >
             {LINKS.map((l, i) => (
-              <a
+              <motion.a
                 key={l.href}
                 href={l.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group bg-ink p-5 md:p-6 hover:bg-[#1f1b15] transition flex flex-col gap-2"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                whileHover={{ backgroundColor: "#1f1b15", y: -4, scale: 1.02 }}
+                className="group bg-ink p-5 md:p-6 transition-all flex flex-col gap-2"
               >
                 <div className="flex items-start justify-between">
                   <span className="label text-ember">
@@ -380,9 +391,9 @@ export default function Tribute() {
                 <div className="font-editorial italic text-[15px] text-bone/65 leading-[1.4]">
                   {l.desc}
                 </div>
-              </a>
+              </motion.a>
             ))}
-          </div>
+          </motion.div>
 
           <p className="mt-8 font-editorial italic text-[17px] md:text-[19px] leading-[1.55] text-bone/75 max-w-[58ch]">
             If you knew him, or were touched by him the way I was — write to me.
