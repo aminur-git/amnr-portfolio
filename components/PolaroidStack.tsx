@@ -70,6 +70,9 @@ export default function PolaroidStack() {
                 <img
                   src={s.src}
                   alt={`Portrait ${s.num}`}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  fetchPriority={i === 0 ? "high" : "auto"}
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover grayscale-[0.15] contrast-[1.02]"
                   onError={(e) => {
                     const t = e.currentTarget;

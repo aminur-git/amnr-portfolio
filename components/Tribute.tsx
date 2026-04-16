@@ -168,56 +168,81 @@ export default function Tribute() {
   const frameCount = 236;
   const currentFrame = useTransform(scrollYProgress, [0, 1], [1, frameCount]);
 
-  // Preload and draw images
+  // Preload and draw images — only when section nears the viewport,
+  // and in small batches so we never fire 236 parallel requests.
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    const section = ref.current;
+    if (!canvas || !section) return;
     const context = canvas.getContext("2d");
     if (!context) return;
 
-    const images: HTMLImageElement[] = [];
-    let loaded = 0;
+    const images: HTMLImageElement[] = new Array(frameCount);
+    let cancelled = false;
+    let started = false;
 
-    for (let i = 1; i <= frameCount; i++) {
-      const img = new Image();
-      // Pad to 3 digits (e.g. 001)
-      const paddedIndex = i.toString().padStart(3, "0");
-      img.src = `/sequence/ezgif-frame-${paddedIndex}.jpg`;
-      images.push(img);
-      img.onload = () => {
-        loaded++;
-        if (loaded === 1) {
-          // Set canvas size dynamically based on the first loaded frame
-          canvas.width = images[0].naturalWidth;
-          canvas.height = images[0].naturalHeight;
-          // Draw the first frame once it's loaded as fallback
-          context.drawImage(images[0], 0, 0, canvas.width, canvas.height);
+    const loadFrame = (i: number) =>
+      new Promise<void>((resolve) => {
+        if (images[i]) return resolve();
+        const img = new Image();
+        const padded = (i + 1).toString().padStart(3, "0");
+        img.src = `/sequence/ezgif-frame-${padded}.jpg`;
+        img.decoding = "async";
+        images[i] = img;
+        img.onload = () => {
+          if (i === 0) {
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
+            context.drawImage(img, 0, 0, canvas.width, canvas.height);
+          }
+          resolve();
+        };
+        img.onerror = () => resolve();
+      });
+
+    const startLoading = async () => {
+      if (started) return;
+      started = true;
+      await loadFrame(0);
+      const BATCH = 8;
+      for (let i = 1; i < frameCount && !cancelled; i += BATCH) {
+        const batch: Promise<void>[] = [];
+        for (let j = i; j < Math.min(i + BATCH, frameCount); j++) {
+          batch.push(loadFrame(j));
         }
-      };
-    }
-
-    const render = (progress: number) => {
-      if (images.length === 0) return;
-      const frameIndex =
-        Math.min(Math.max(1, Math.round(progress)), frameCount) - 1;
-      if (images[frameIndex] && images[frameIndex].complete) {
-        context.drawImage(
-          images[frameIndex],
-          0,
-          0,
-          canvas.width,
-          canvas.height,
-        );
+        await Promise.all(batch);
       }
     };
 
-    // Subscripe to motion value changes
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          startLoading();
+          io.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px" },
+    );
+    io.observe(section);
+
+    const render = (progress: number) => {
+      const frameIndex =
+        Math.min(Math.max(1, Math.round(progress)), frameCount) - 1;
+      const img = images[frameIndex];
+      if (img && img.complete && img.naturalWidth) {
+        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+      }
+    };
+
     const unsubscribe = currentFrame.on("change", (latest) => {
-      // Use requestAnimationFrame for smoother performance
       requestAnimationFrame(() => render(latest));
     });
 
-    return () => unsubscribe();
+    return () => {
+      cancelled = true;
+      io.disconnect();
+      unsubscribe();
+    };
   }, [currentFrame, frameCount]);
 
   const s = useSpring(scrollYProgress, {
@@ -318,7 +343,10 @@ export default function Tribute() {
               <div className="absolute -inset-2 md:-inset-3 bg-bone/95 shadow-[0_16px_48px_rgba(0,0,0,0.5)]" />
               <canvas
                 ref={canvasRef}
-                className="relative w-full h-auto block"
+                width={716}
+                height={898}
+                className="relative block w-full h-auto"
+                style={{ aspectRatio: "716 / 898" }}
               />
               <figcaption className="relative mt-3 flex items-center justify-between label text-ink/70 bg-bone/90 px-3 py-1.5">
                 <span>ঢাকা · Dhaka</span>

@@ -29,6 +29,8 @@ export default function ContactSheet() {
               <img
                 src={p.src}
                 alt={`Plate ${i + 1} — ${p.caption}`}
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover grayscale-[0.6] contrast-[1.05] group-hover:grayscale-0 transition duration-500"
                 onError={(e) => {
                   const t = e.currentTarget;
