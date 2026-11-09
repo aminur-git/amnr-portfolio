@@ -88,8 +88,8 @@ export default function Orgs() {
           <div className="col-span-12 md:col-span-4">
             <div className="rule mb-4 opacity-40" />
             <p className="font-editorial text-[17px] leading-[1.5] text-bone/70">
-              Three homes on GitHub, three kinds of work. Some open, some
-              deliberately quiet.
+              I lead engineering at Aqren. These are some of the teams and
+              products I&rsquo;ve worked with along the way.
             </p>
           </div>
         </div>

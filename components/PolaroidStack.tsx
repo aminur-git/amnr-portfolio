@@ -37,7 +37,7 @@ export default function PolaroidStack() {
 
   return (
     <div
-      className="relative mx-auto md:mx-0 w-[220px] sm:w-[240px] md:w-full md:max-w-[260px] h-[320px] sm:h-[340px] md:h-[360px] select-none"
+      className="relative mx-auto w-[220px] sm:w-[240px] md:w-full md:max-w-[260px] h-[320px] sm:h-[340px] md:h-[360px] select-none"
       onClick={next}
       role="button"
       aria-label="Flip through photos"

@@ -12,7 +12,8 @@ export default function Footer() {
               <span className="frx-italic text-ember">slowly.</span>
             </h3>
             <p className="font-editorial text-[18px] sm:text-[22px] italic text-bone/75 mt-6 max-w-[40ch]">
-              I read every email. I answer most of them. Long letters preferred.
+              As CTO of Aqren Dev, I&rsquo;d like to hear what your business
+              needs and who it serves.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -42,10 +43,12 @@ export default function Footer() {
                 </span>
               </a>
               <a
-                href="#"
+                href="https://www.aqren.dev/en"
+                target="_blank"
+                rel="noreferrer"
                 className="px-5 py-3 border border-bone/30 label hover:bg-bone hover:text-ink transition"
               >
-                Read.cv
+                Aqren Dev ↗
               </a>
               <a
                 href="#"
@@ -66,7 +69,8 @@ export default function Footer() {
               </li>
               <li>
                 <span className="label text-ember mr-2">02</span>
-                Tinkering with local-first sync over Bluetooth LE.
+                Leading Aqren&rsquo;s engineering team from product decisions
+                through delivery.
               </li>
               <li>
                 <span className="label text-ember mr-2">03</span>

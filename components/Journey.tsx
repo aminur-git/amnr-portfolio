@@ -29,8 +29,8 @@ const entries = [
   },
   {
     year: "2026",
-    title: "Local-first, slow-web, hand-rolled (Own Company) ",
-    body: "Got tired of cloud-shaped problems. Started writing software with homies that belongs to the person holding the device. Felt like coming home.",
+    title: "Leading engineering at Aqren Dev",
+    body: "As CTO of Aqren Dev, I lead a team that starts with the business problem, works closely with clients, and builds software people can rely on.",
     tag: "now",
   },
 ];
@@ -52,9 +52,9 @@ export default function Journey() {
         <div className="col-span-12 md:col-span-4 md:col-start-9">
           <div className="rule mb-4" />
           <p className="font-editorial text-[19px] leading-[1.45] text-ink/80">
-            The résumé version is boring. Here&rsquo;s the version with the
-            margins still in it — the detours, the re-reads, the places I got
-            lost on purpose.
+            This is the path that brought me to Aqren: early curiosity, real
+            users, remote teams, and learning to see the business problem
+            behind the software.
           </p>
         </div>
       </div>

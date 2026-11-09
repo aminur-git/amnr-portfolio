@@ -4,22 +4,25 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.amnr.bro.bd/"),
   title: {
-    default: "Aminur Rahman — Enterprise software, built from business sense",
+    default: "Aminur Rahman — CTO at Aqren Dev",
     template: "%s · Aminur Rahman",
   },
   description:
-    "Full-stack developer and CTO from Bangladesh. Building enterprise SaaS systems — Alpha, CloudShadow, Sekkain, Aqren. A non-linear portfolio, held quietly for Hadi.",
+    "I’m Aminur Rahman, CTO of Aqren Dev. I lead teams and build software around the business problems people need solved. Explore my work across SaaS, operations, and client products.",
   keywords: [
     "Aminur Rahman",
+    "Aqren Dev",
     "full-stack developer",
     "CTO",
     "Next.js",
     "TypeScript",
     "enterprise SaaS",
     "Bangladesh",
-    "Aqren",
+    "Alpha",
     "Sekkain",
-    "CloudShadow",
+    "The Cloud Shadow LLC",
+    "Fieldflo Automation",
+    "The Quran Circle",
   ],
   authors: [{ name: "Aminur Rahman" }],
   creator: "Aminur Rahman",
@@ -28,9 +31,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.amnr.bro.bd/",
     siteName: "Aminur Rahman",
-    title: "Aminur Rahman — Enterprise software, built from business sense",
+    title: "Aminur Rahman — CTO at Aqren Dev",
     description:
-      "A non-linear portfolio. Full-stack developer and CTO. Wander between four rooms — pick up what you want, leave the rest.",
+      "I’m Aminur Rahman, CTO of Aqren Dev. I lead teams and build software around real business problems.",
     images: [
       {
         url: "/og.jpg",
@@ -42,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aminur Rahman — Enterprise software, built from business sense",
+    title: "Aminur Rahman — CTO at Aqren Dev",
     description:
-      "Full-stack developer and CTO. A non-linear portfolio, held quietly for Hadi.",
+      "I’m Aminur Rahman, CTO of Aqren Dev. Explore the products I’ve helped build and the problems behind them.",
     images: ["/og.jpg"],
     creator: "@aminur",
   },

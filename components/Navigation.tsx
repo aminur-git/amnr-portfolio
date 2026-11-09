@@ -123,7 +123,7 @@ export default function Navigation({
                 <span className="absolute inline-flex h-full w-full rounded-full bg-ember opacity-60 blink" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-ember" />
               </span>
-              <span className="label text-ink/70">Open to wander</span>
+              <span className="label text-ink/70">CTO at Aqren</span>
             </div>
 
             {/* tiny status dot on tablet */}
@@ -209,7 +209,7 @@ export default function Navigation({
                     <span className="absolute inline-flex h-full w-full rounded-full bg-ember opacity-60 blink" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-ember" />
                   </span>
-                  <span className="label text-ink/70">Open to wander</span>
+                  <span className="label text-ink/70">CTO at Aqren</span>
                 </div>
                 <a
                   href="mailto:aminur@aqren.dev"

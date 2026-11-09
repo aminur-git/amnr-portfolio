@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 export type Project = {
@@ -13,6 +14,11 @@ export type Project = {
   blurb: string;
   long: string[];
   stack: string[];
+  cover?: string;
+  coverAlt?: string;
+  logo?: string;
+  status?: "delivered" | "in-partnership" | "working";
+  siteUrl?: string;
   link: string;
 };
 
@@ -33,20 +39,27 @@ export default function ProjectCard({
       >
         <div className="col-span-2 md:col-span-1 label text-ink/50">{project.num}</div>
 
-        <div className="col-span-10 md:col-span-5 flex flex-col md:flex-row md:items-baseline md:gap-4">
-          <span
-            className="frx text-[32px] sm:text-[38px] md:text-[54px] leading-[0.95] tracking-tightest"
-            style={{ color: open ? project.hue : undefined }}
-          >
-            {project.title}
-          </span>
-          <span
-            className="font-editorial italic text-[16px] md:text-[20px] text-ink/65 leading-snug"
-            dangerouslySetInnerHTML={{ __html: project.kicker }}
-          />
+        <div className="col-span-10 md:col-span-5 relative flex items-start gap-3 md:block">
+          {project.logo && (
+            <span className="relative block w-10 h-10 md:w-12 md:h-12 shrink-0 self-center overflow-hidden rounded-xl border border-ink/25 bg-[#0b0910] md:absolute md:right-full md:top-1/2 md:mr-3 md:-translate-y-1/2">
+              <Image src={project.logo} alt="" fill sizes="(max-width: 768px) 40px, 48px" className="object-cover" />
+            </span>
+          )}
+          <div className="flex flex-col md:flex-row md:flex-wrap md:items-baseline md:gap-x-4 md:gap-y-1">
+            <span
+              className="frx text-[32px] sm:text-[38px] md:text-[54px] leading-[0.95] tracking-tightest"
+              style={{ color: open ? project.hue : undefined }}
+            >
+              {project.title}
+            </span>
+            <span
+              className="font-editorial italic text-[16px] md:text-[20px] text-ink/65 leading-snug"
+              dangerouslySetInnerHTML={{ __html: project.kicker }}
+            />
+          </div>
         </div>
 
-        <div className="col-span-6 md:col-span-3">
+        <div className="col-span-6 md:col-span-3 flex flex-wrap items-center gap-2">
           <span
             className="inline-flex items-center gap-2 px-2.5 py-1 border border-ink/30 label"
             style={{ color: project.hue }}
@@ -57,6 +70,11 @@ export default function ProjectCard({
             />
             {project.tag}
           </span>
+          {project.status && (
+            <span className="inline-flex items-center rounded-full border border-ink/30 bg-ink/5 px-2.5 py-1 label text-ink/70">
+              {project.status.replace("-", " ")}
+            </span>
+          )}
         </div>
 
         <div className="col-span-4 md:col-span-2 label text-ink/60">{project.year}</div>
@@ -86,42 +104,64 @@ export default function ProjectCard({
             <div className="grid grid-cols-12 gap-6 pb-10 pt-2">
               <div
                 className="col-span-12 md:col-span-5 relative h-[220px] sm:h-[260px] md:h-full min-h-[280px] rounded-sm overflow-hidden border border-ink/15"
-                style={{
+                style={project.cover ? { background: "#0b0910" } : {
                   background: `radial-gradient(120% 80% at 20% 10%, ${project.hue}33, transparent 60%), linear-gradient(135deg, ${project.hue}14, ${project.hue}02)`,
                 }}
               >
-                <div className="absolute inset-0 dot-grid opacity-40" />
-                <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-between">
-                  <div className="flex items-center justify-between">
-                    <span className="label text-ink/70">Case N° {project.num}</span>
-                    <span className="label text-ink/70">{project.year}</span>
-                  </div>
-                  <div>
-                    <div
-                      className="frx text-[42px] sm:text-[54px] md:text-[76px] leading-[0.9] break-words"
-                      style={{ color: project.hue }}
-                    >
-                      {project.title}
-                    </div>
-                    <div
-                      className="font-editorial italic text-[20px] text-ink/75 mt-2"
-                      dangerouslySetInnerHTML={{ __html: project.kicker }}
+                {project.cover ? (
+                  <>
+                    <Image
+                      src={project.cover}
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 100vw, 42vw"
+                      className="object-cover opacity-30 blur-xl scale-110"
+                      aria-hidden
                     />
-                  </div>
-                </div>
-                <svg
-                  className="absolute bottom-5 right-5 drift"
-                  width="60"
-                  height="60"
-                  viewBox="0 0 60 60"
-                  aria-hidden
-                >
-                  <path
-                    className="scribble"
-                    d="M8 52 C 20 30, 40 48, 52 8"
-                    stroke={project.hue}
-                  />
-                </svg>
+                    <Image
+                      src={project.cover}
+                      alt={project.coverAlt ?? `${project.title} project preview`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 42vw"
+                      className="object-contain"
+                    />
+                  </>
+                ) : (
+                  <>
+                    <div className="absolute inset-0 dot-grid opacity-40" />
+                    <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-between">
+                      <div className="flex items-center justify-between">
+                        <span className="label text-ink/70">Case N° {project.num}</span>
+                        <span className="label text-ink/70">{project.year}</span>
+                      </div>
+                      <div>
+                        <div
+                          className="frx text-[42px] sm:text-[54px] md:text-[76px] leading-[0.9] break-words"
+                          style={{ color: project.hue }}
+                        >
+                          {project.title}
+                        </div>
+                        <div
+                          className="font-editorial italic text-[20px] text-ink/75 mt-2"
+                          dangerouslySetInnerHTML={{ __html: project.kicker }}
+                        />
+                      </div>
+                    </div>
+                    <svg
+                      className="absolute bottom-5 right-5 drift"
+                      width="60"
+                      height="60"
+                      viewBox="0 0 60 60"
+                      aria-hidden
+                    >
+                      <path
+                        className="scribble"
+                        d="M8 52 C 20 30, 40 48, 52 8"
+                        stroke={project.hue}
+                      />
+                    </svg>
+                  </>
+                )}
               </div>
 
               <div className="col-span-12 md:col-span-7 md:pl-4">
@@ -150,10 +190,14 @@ export default function ProjectCard({
 
                 <div className="mt-7 flex flex-wrap gap-3">
                   <a
-                    href={project.link}
+                    href={project.siteUrl ?? project.link}
+                    target={project.siteUrl ? "_blank" : undefined}
+                    rel={project.siteUrl ? "noopener noreferrer" : undefined}
                     className="px-4 py-2.5 bg-ink text-bone label hover:bg-ember transition-colors inline-flex items-center gap-2"
                   >
-                    Open case file →
+                    {project.siteUrl
+                      ? `Visit: ${new URL(project.siteUrl).hostname.replace(/^www\./, "")} ↗`
+                      : "Open case file →"}
                   </a>
                   <a
                     href={project.link}
