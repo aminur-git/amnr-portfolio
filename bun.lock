@@ -12,7 +12,6 @@
         "react-icons": "^5.6.0",
       },
       "devDependencies": {
-        "@next/swc-darwin-arm64": "^16.4.5",
         "@types/node": "^20.14.11",
         "@types/react": "^18.3.3",
         "@types/react-dom": "^18.3.0",
@@ -36,7 +35,6 @@
 
     "@next/env": ["@next/env@14.2.5", "", {}, "sha512-/zZGkrTOsraVfYjGP8uM0p6r0BDT6xWpkjdVbcz66PJVSpwXX3yNiRycxAuDfBKGWBrZBXRuK/YVlkNgxHGwmA=="],
 
-    "@next/swc-darwin-arm64": ["@next/swc-darwin-arm64@16.4.5", "", { "os": "darwin", "cpu": "arm64" }, "sha512-W5TniBzWKASbNNwHZ/S/f1MxQUXU/LdjklVMWA0Ujbfl7SZnUzFls45hO0i/sF7Bx1jJBWp7WWmoQajXtX/O8A=="],
 
     "@next/swc-darwin-x64": ["@next/swc-darwin-x64@14.2.5", "", { "os": "darwin", "cpu": "x64" }, "sha512-vXHOPCwfDe9qLDuq7U1OYM2wUY+KQ4Ex6ozwsKxp26BlJ6XXbHleOUldenM67JRyBfVjv371oneEvYd3H2gNSA=="],
 
